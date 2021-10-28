@@ -1,0 +1,44 @@
+﻿@model List<SistemaGCSYNCATARI.Models.Metodologia>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<h2> Listados de Metodologias</h2>
+<h2 class="pagegeader">
+    <a href="~/Metodologia/Agregar" class="btn btn-info text-right">Nuevo Registro Metodologia</a>
+
+
+</h2>
+<br />
+<br />
+@using (Html.BeginForm("Index", "Metodologia", FormMethod.Post))
+{
+
+}
+
+<table id="datatable" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <td>@(m.Id_metodologia)</td>
+                <td>@(m.Nombre)</td>
+                <td>
+                    <a href="~/Metodologia/Ver/@m.Id_metodologia" class="btn btn-primary">VER</a>
+                    <a href="~/Metodologia/Agregar/@m.Id_metodologia" class="btn btn-success">EDITAR</a>
+                    <a onclick="return confirm('Esta Seguro que desea eliminar el registro?')" href="~/Metodologia/Eliminar/@m.Id_metodologia" class="btn btn-danger">ELIMINAR</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <p></p>
+</table>

@@ -1,0 +1,49 @@
+﻿@model List<SistemaGCSYNCATARI.Models.Usuario>
+@{
+    ViewBag.Title = "Index";
+
+}
+
+<h2>Listado de Usuarios</h2>
+<h2 class="pagegeader">
+    <a href="~/Usuario/Agregar" class="btn btn-info text-right">Nuevo Registro</a>
+
+</h2>
+<br />
+<br />
+@using (Html.BeginForm("Index", "Usuario", FormMethod.Post))
+{
+
+}
+
+<table id="datatable" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Usuario</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Correo Electronico</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <td>@(m.Id_usuario)</td>
+                <td>@(m.Tipo_Usuario.Nombre)</td>
+                <td>@(m.Nombre)</td>
+                <td>@(m.Apellido)</td>
+                <td>@(m.Correo)</td>
+
+                <td>
+                    <a href="~/Usuario/Ver/@m.Id_usuario" class="btn btn-primary">VER</a>
+                    <a href="~/Usuario/Agregar/@m.Id_usuario" class="btn btn-success">EDITAR</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

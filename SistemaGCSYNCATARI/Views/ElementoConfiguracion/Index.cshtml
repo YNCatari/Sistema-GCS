@@ -1,0 +1,45 @@
+﻿@model List<SistemaGCSYNCATARI.Models.Elemento_Configuracion>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Nuevo Elemento de Configuración</h2>
+<h2 class="pagegeader">
+    <a href="~/ElementoConfiguracion/Agregar" class="btn btn-info text-right">Nuevo Registro ECS</a>
+
+</h2>
+<br />
+<br />
+@using (Html.BeginForm("Index", "ElementoConfiguracion", FormMethod.Post))
+{
+
+}
+
+<table id="datatable" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <td>@(m.Id_elementoconfiguracion)</td>
+                <td>@(m.Codigo)</td>
+                <td>@(m.Nombre)</td>
+                <td>
+
+                    <a href="~/ElementoConfiguracion/Agregar/@m.Id_elementoconfiguracion" class="btn btn-success">Editar</a>
+                    <a onclick="return confirm('Esta Seguro que desea eliminar el registro?')" href="~/Metodologia/Eliminar/@m.Id_elementoconfiguracion" class="btn btn-danger">Eliminar</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
