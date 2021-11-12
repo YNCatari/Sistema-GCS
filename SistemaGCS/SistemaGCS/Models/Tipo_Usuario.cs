@@ -7,6 +7,7 @@ namespace SistemaGCS.Models
     using System.Data.Entity.Spatial;
     using System.Data.Entity;
     using System.Linq;
+    [Table("Tipo_Usuario")]
     public partial class Tipo_Usuario
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

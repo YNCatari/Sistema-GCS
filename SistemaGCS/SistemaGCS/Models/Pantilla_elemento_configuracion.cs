@@ -5,6 +5,9 @@ namespace SistemaGCS.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Data.Entity;
+    using System.Linq;
+    [Table("Pantilla_elemento_configuracion")]
 
     public partial class Pantilla_elemento_configuracion
     {
