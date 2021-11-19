@@ -7,7 +7,7 @@
 
 <h2> Listados de Metodologias</h2>
 <h2 class="pagegeader">
-    <a href="~/Metodologias/Agregar" class="btn btn-info text-right">Nuevo Registro Metodologia</a>
+    <a href="~/Metodologias/Agregar" class="btn btn-info text-right">Nuevo Registro </a>
 
 
 </h2>
@@ -33,7 +33,7 @@
                 <td>@(m.Id_metodologia)</td>
                 <td>@(m.Nombre)</td>
                 <td>
-                    <a href="~/Metodologias/Ver/@m.Id_metodologia" class="btn btn-primary">VER</a>
+                    <a href="#" class="btn btn-primary">VER</a>
                     <a href="~/Metodologias/Agregar/@m.Id_metodologia" class="btn btn-success">EDITAR</a>
                     <a onclick="return confirm('Esta Seguro que desea eliminar el registro?')" href="~/Metodologias/Eliminar/@m.Id_metodologia" class="btn btn-danger">ELIMINAR</a>
                 </td>

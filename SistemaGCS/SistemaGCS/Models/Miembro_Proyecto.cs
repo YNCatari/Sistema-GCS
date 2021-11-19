@@ -35,7 +35,7 @@ namespace SistemaGCS.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Version_ECS> Version_ECS { get; set; }
 
-        //POSIBLES ERRORES
+        //POSIBLES ERRORES aqui va con rol
         //Metodo Listar
         public List<Miembro_Proyecto> Listar()
         {
