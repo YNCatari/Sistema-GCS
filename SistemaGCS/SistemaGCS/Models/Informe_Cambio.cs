@@ -55,5 +55,114 @@ namespace SistemaGCS.Models
         public virtual ICollection<Detalle_Informe> Detalle_Informe { get; set; }
 
         public virtual Solicitud_Cambios Solicitud_Cambios { get; set; }
+
+        //Metodo Listar
+        public List<Informe_Cambio> Listar()
+        {
+            var ic = new List<Informe_Cambio>();
+            try
+            {
+                using (var db = new ModelGCS())
+                {
+                    ic = db.Informe_Cambio.Include("Solicitud_Cambios").Include("Miembro_Proyecto").ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return ic;
+
+        }
+        //Metodo Obtener
+        public Informe_Cambio Obtener(int id)
+        {
+            var ic = new Informe_Cambio();
+            try
+            {
+                using (var db = new ModelGCS())
+                {
+                    ic = db.Informe_Cambio.Include("Solicitud_Cambios").Include("Miembro_Proyecto").Where(x => x.Id_informe_cambio == id)
+                                .SingleOrDefault();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return ic;
+        }
+        //Metodo Buscar
+        public List<Informe_Cambio> Buscar(string criterio)
+        {
+            var ic = new List<Informe_Cambio>();
+
+            try
+            {
+                using (var db = new ModelGCS())
+                {
+                    ic = db.Informe_Cambio.Include("Solicitud_Cambios").Include("Miembro_Proyecto").Where(x => x.Codigo.Contains(criterio) ||
+                                x.Descripcion.Contains(criterio) || x.Tiempo.Contains(criterio) || x.CostoEconomico.Contains(criterio))
+                                .ToList();
+
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return ic;
+
+        }
+        //Metodo Guardar
+        public void Guardar()
+        {
+            try
+            {
+                using (var db = new ModelGCS())
+                {
+                    if (this.Id_informe_cambio > 0)
+                    {
+                        db.Entry(this).State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        db.Entry(this).State = EntityState.Added;
+                    }
+                    db.SaveChanges();
+
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        ///METODO Eliminar
+        public void Eliminar()
+        {
+            try
+            {
+                using (var db = new ModelGCS())
+                {
+
+                    db.Entry(this).State = EntityState.Deleted;
+
+                    db.SaveChanges();
+
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+
+
+
     }
 }

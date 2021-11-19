@@ -34,5 +34,114 @@ namespace SistemaGCS.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Version_ECS> Version_ECS { get; set; }
+
+        //POSIBLES ERRORES
+        //Metodo Listar
+        public List<Miembro_Proyecto> Listar()
+        {
+            var mp = new List<Miembro_Proyecto>();
+            try
+            {
+                using (var db = new ModelGCS())
+                {
+                    mp = db.Miembro_Proyecto.Include("Usuario").Include("Proyecto").ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return mp;
+
+        }
+        //Metodo Obtener
+        public Miembro_Proyecto Obtener(int id)
+        {
+            var mp = new Miembro_Proyecto();
+            try
+            {
+                using (var db = new ModelGCS())
+                {
+                    mp = db.Miembro_Proyecto.Include("Usuario").Include("Proyecto").Where(x => x.Id_miembro == id)
+                                .SingleOrDefault();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return mp;
+        }
+        //Metodo Buscar
+        public List<Miembro_Proyecto> Buscar(string criterio)
+        {
+            var mp = new List<Miembro_Proyecto>();
+
+            try
+            {
+                using (var db = new ModelGCS())
+                {
+                    mp = db.Miembro_Proyecto.Include("Usuario").Include("Proyecto").Where(x => x.Id_miembro.Equals(criterio) ||
+                                x.Id_usuario.Equals(criterio))
+                                .ToList();
+
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return mp;
+
+        }
+        //Metodo Guardar
+        public void Guardar()
+        {
+            try
+            {
+                using (var db = new ModelGCS())
+                {
+                    if (this.Id_miembro > 0)
+                    {
+                        db.Entry(this).State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        db.Entry(this).State = EntityState.Added;
+                    }
+                    db.SaveChanges();
+
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        ///METODO Eliminar
+        public void Eliminar()
+        {
+            try
+            {
+                using (var db = new ModelGCS())
+                {
+
+                    db.Entry(this).State = EntityState.Deleted;
+
+                    db.SaveChanges();
+
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+
+
     }
 }

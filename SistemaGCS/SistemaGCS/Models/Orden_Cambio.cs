@@ -50,5 +50,114 @@ namespace SistemaGCS.Models
         public virtual ICollection<Orden_Cambio_Detalle> Orden_Cambio_Detalle { get; set; }
 
         public virtual Solicitud_Cambios Solicitud_Cambios { get; set; }
+
+
+        //Metodo Listar
+        public List<Orden_Cambio> Listar()
+        {
+            var oc = new List<Orden_Cambio>();
+            try
+            {
+                using (var db = new ModelGCS())
+                {
+                    oc = db.Orden_Cambio.Include("Solicitud_Cambios").ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return oc;
+
+        }
+        //Metodo Obtener
+        public Orden_Cambio Obtener(int id)
+        {
+            var oc = new Orden_Cambio();
+            try
+            {
+                using (var db = new ModelGCS())
+                {
+                    oc = db.Orden_Cambio.Include("Solicitud_Cambios").Where(x => x.Id_ordencambio == id)
+                                .SingleOrDefault();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return oc;
+        }
+        //Metodo Buscar
+        public List<Orden_Cambio> Buscar(string criterio)
+        {
+            var oc = new List<Orden_Cambio>();
+
+            try
+            {
+                using (var db = new ModelGCS())
+                {
+                    oc = db.Orden_Cambio.Include("Solicitud_Cambios").Where(x => x.Descripción.Contains(criterio) ||
+                                x.FechaAprobacion.Contains(criterio))
+                                .ToList();
+
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return oc;
+
+        }
+        //Metodo Guardar
+        public void Guardar()
+        {
+            try
+            {
+                using (var db = new ModelGCS())
+                {
+                    if (this.Id_ordencambio > 0)
+                    {
+                        db.Entry(this).State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        db.Entry(this).State = EntityState.Added;
+                    }
+                    db.SaveChanges();
+
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        ///METODO Eliminar
+        public void Eliminar()
+        {
+            try
+            {
+                using (var db = new ModelGCS())
+                {
+
+                    db.Entry(this).State = EntityState.Deleted;
+
+                    db.SaveChanges();
+
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+
+
     }
 }
