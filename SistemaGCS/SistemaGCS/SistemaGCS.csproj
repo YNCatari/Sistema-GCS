@@ -125,7 +125,6 @@
     <Compile Include="Controllers\FaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InformeEstadoController.cs" />
-    <Compile Include="Controllers\InformEstadoController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MetodologiasController.cs" />
     <Compile Include="Controllers\OrdenCambioDetalleController.cs" />
@@ -173,6 +172,8 @@
     <Content Include="Views\ElementoConfiguracion\Agregar.cshtml" />
     <Content Include="Views\Fase\Index.cshtml" />
     <Content Include="Views\Fase\Agregar.cshtml" />
+    <Content Include="Views\InformeEstado\Index.cshtml" />
+    <Content Include="Views\OrdenCambioDetalle\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -182,9 +183,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\InformeEstado\" />
     <Folder Include="Views\InformEstado\" />
-    <Folder Include="Views\OrdenCambioDetalle\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
