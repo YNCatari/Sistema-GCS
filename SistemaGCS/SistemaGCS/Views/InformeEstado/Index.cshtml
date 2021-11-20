@@ -1,7 +1,57 @@
-﻿
+﻿@model List<SistemaGCS.Models.Orden_Cambio>
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Listado de Fases de la metodología</h2>
+<h2 class="pagegeader">
+    <a href="~/Fase/Agregar" class="btn btn-info text-right">Nuevo Registro</a>
+
+</h2>
+<br />
+<br />
+@using (Html.BeginForm("Index", "InformeEstado", FormMethod.Post))
+{
+
+}
+
+<table id="datatable" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Fecha Aprobacion</th>
+            <th>Fecha Inicio</th>
+            <th>Fecha Termino</th>
+            <th>Descripcion</th>
+            <th>Porcentajes avanzado</th>
+            <th>Estado</th>
+            <th>Id Solicitud de Cambio</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <td>@(m.Id_ordencambio)</td>
+                <td>@(m.FechaAprobacion)</td>
+                <td>@(m.FechaInicio)</td>
+                <td>@(m.FechaTermino)</td>
+                <td>@(m.Descripción)</td>
+                <td>@(m.PorcentajeAvance)</td>
+                <td>@(m.Estado)</td>
+                <td>@(m.Solicitud_Cambios.Id_solicitud_cambios)</td>
+
+
+
+                <td>
+
+                    <a href="~/InformeEstado/Agregar/@m.Id_ordencambio" class="btn btn-success">EDITAR</a>
+                    <a onclick="return confirm('Esta Seguro que desea eliminar el registro?')" href="~/Fase/Eliminar/@m.Id_ordencambio" class="btn btn-danger">ELIMINAR</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
 

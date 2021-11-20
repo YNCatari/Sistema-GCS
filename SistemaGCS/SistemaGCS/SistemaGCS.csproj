@@ -131,6 +131,7 @@
     <Compile Include="Controllers\RolController.cs" />
     <Compile Include="Controllers\TipoUsuarioController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Controllers\Version_ECSController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -177,6 +178,9 @@
     <Content Include="Views\OrdenCambioDetalle\Index.cshtml" />
     <Content Include="Views\Rol\Index.cshtml" />
     <Content Include="Views\Rol\Agregar.cshtml" />
+    <Content Include="Views\InformeEstado\Agregar.cshtml" />
+    <Content Include="Views\VersionECS\Index.cshtml" />
+    <Content Include="Views\VersionECS\Agregar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -186,7 +190,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\InformEstado\" />
+    <Folder Include="Views\Version_ECS\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
