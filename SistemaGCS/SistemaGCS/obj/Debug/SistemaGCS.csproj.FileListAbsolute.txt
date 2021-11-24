@@ -243,3 +243,4 @@ D:\ProyectoGestion\Sistema-Gestion-de-la-Configuracion-Software\SistemaGCS\Siste
 D:\ProyectoGestion\Sistema-Gestion-de-la-Configuracion-Software\SistemaGCS\SistemaGCS\obj\Debug\SistemaGCS.csproj.CopyComplete
 D:\ProyectoGestion\Sistema-Gestion-de-la-Configuracion-Software\SistemaGCS\SistemaGCS\obj\Debug\SistemaGCS.dll
 D:\ProyectoGestion\Sistema-Gestion-de-la-Configuracion-Software\SistemaGCS\SistemaGCS\obj\Debug\SistemaGCS.pdb
+C:\Users\yncat\Documents\GitHub\Sistema-Gestion-de-la-Configuracion-Software\SistemaGCS\SistemaGCS\obj\Debug\SistemaGCS.csproj.CopyComplete
