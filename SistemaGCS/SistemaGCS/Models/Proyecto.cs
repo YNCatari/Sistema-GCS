@@ -58,5 +58,45 @@ namespace SistemaGCS.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Solicitud_Cambios> Solicitud_Cambios { get; set; }
+
+
+        public List<Proyecto> Listar()
+        {
+            var proyecto = new List<Proyecto>();
+            try
+            {
+                using (var db = new ModelGCS())
+                {
+                    proyecto = db.Proyecto.Include("Usuario").ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return proyecto;
+
+        }
+
+        //Metodo Obtener
+        public Proyecto Obtener(int id)
+        {
+            var proyecto = new Proyecto();
+            try
+            {
+                using (var db = new ModelGCS())
+                {
+                    proyecto = db.Proyecto.Where(x => x.Id_proyecto == id)
+                                .SingleOrDefault();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return proyecto;
+        }
     }
 }

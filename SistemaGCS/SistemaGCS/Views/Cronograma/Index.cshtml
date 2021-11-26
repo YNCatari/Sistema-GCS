@@ -1,0 +1,44 @@
+﻿@model List<SistemaGCS.Models.Cronograma>
+@{ ViewBag.Title = "Index"; }
+
+<h2>Listado de Cronogramas</h2>
+<h2 class="pagegeader">
+    <a href="~/Cronograma/Agregar" class="btn btn-info text-right">Nuevo Cronograma</a>
+
+</h2>
+<br />
+<br />
+@using (Html.BeginForm("Index", "Cronograma", FormMethod.Post))
+{
+
+}
+
+<table id="datatable" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>FECHA INICIO</th>
+            <th>FECHA TERMINO</th>
+            <th>Proyecto</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+<tr>
+    <td>@(m.Id_cronograma)</td>
+    <td>@(m.FechaInicio)</td>
+    <td>@(m.FechaTermino)</td>
+    <td>@(m.Proyecto.Id_proyecto)</td>
+
+    <td>
+
+        <a href="~/Cronograma/Agregar/@m.Id_cronograma" class="btn btn-success">EDITAR</a>
+        <a onclick="return confirm('Esta Seguro que desea eliminar el registro?')" href="~/Cronograma/Eliminar/@m.Id_cronograma" class="btn btn-danger">ELIMINAR</a>
+
+    </td>
+</tr>}
+
+    </tbody>
+</table>
+

@@ -121,6 +121,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CronogramaController.cs" />
     <Compile Include="Controllers\ElementoConfiguracionController.cs" />
     <Compile Include="Controllers\FaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -181,6 +182,8 @@
     <Content Include="Views\InformeEstado\Agregar.cshtml" />
     <Content Include="Views\VersionECS\Index.cshtml" />
     <Content Include="Views\VersionECS\Agregar.cshtml" />
+    <Content Include="Views\Cronograma\Index.cshtml" />
+    <Content Include="Views\Cronograma\Agregar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
