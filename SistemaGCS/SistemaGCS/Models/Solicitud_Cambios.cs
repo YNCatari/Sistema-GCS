@@ -10,22 +10,22 @@ namespace SistemaGCS.Models
     {
         [Key]
         public int Id_solicitud_cambios { get; set; }
-
+        [Required]
         [StringLength(50)]
         public string Codigo { get; set; }
-
+        [Required]
         [StringLength(50)]
         public string Fecha { get; set; }
-
+        [Required]
         [StringLength(50)]
         public string Objetivo { get; set; }
-
+        [Required]
         [StringLength(50)]
         public string Descripcion { get; set; }
-
+        [Required]
         [StringLength(50)]
         public string Respuesta { get; set; }
-
+        [Required]
         [StringLength(50)]
         public string Estado { get; set; }
 

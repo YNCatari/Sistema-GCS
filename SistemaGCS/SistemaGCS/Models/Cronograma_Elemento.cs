@@ -14,10 +14,10 @@ namespace SistemaGCS.Models
         public int Id_proyecto { get; set; }
 
         public int Id_elementoconfiguracion { get; set; }
-
+        [Required]
         [StringLength(50)]
         public string Fechainicio { get; set; }
-
+        [Required]
         [StringLength(50)]
         public string Fechafin { get; set; }
 

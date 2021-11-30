@@ -96,11 +96,37 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Source\css\app.css" />
+    <Content Include="Source\css\bootstrap.css" />
+    <Content Include="Source\css\bootstrap.min.css" />
+    <Content Include="Source\css\jquery.dataTables.min.css" />
+    <Content Include="Source\css\sweetalert.min.css" />
+    <Content Include="Source\css\sweetalert2.min.css" />
+    <Content Include="Source\img\avatars\avatar.jpg" />
+    <Content Include="Source\img\avatars\svg.png" />
+    <Content Include="Source\img\img2.jpg" />
+    <Content Include="Source\img\login.png" />
+    <Content Include="Source\img\logo.png" />
+    <Content Include="Source\js\app.js" />
+    <Content Include="Source\js\bootstrap.js" />
+    <Content Include="Source\js\bootstrap.min.js" />
+    <Content Include="Source\js\jquery-3.5.1.js" />
+    <Content Include="Source\js\jquery.dataTables.min.js" />
+    <Content Include="Source\js\jquery.validate.js" />
+    <Content Include="Source\js\jquery.validate.unobtrusive.js" />
+    <Content Include="Source\js\sweetalert.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\Miembro_ProyectoController.cs" />
+    <Compile Include="Controllers\RolController.cs" />
+    <Compile Include="Controllers\Tipo_UsuarioController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -121,6 +147,16 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Tipo_Usuario\Index.cshtml" />
+    <Content Include="Views\Tipo_Usuario\Agregar.cshtml" />
+    <Content Include="Views\Usuario\Index.cshtml" />
+    <Content Include="Views\Usuario\Agregar.cshtml" />
+    <Content Include="Views\Rol\Index.cshtml" />
+    <Content Include="Views\Rol\Agregar.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -130,7 +166,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
+    <Folder Include="Views\Miembro_Proyecto\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

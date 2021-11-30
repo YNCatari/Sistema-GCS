@@ -12,24 +12,24 @@ namespace SistemaGCS.Models
         public int Id_version { get; set; }
 
         public int Id_elementoconfiguracion { get; set; }
-
+        [Required]
         [StringLength(50)]
         public string Version { get; set; }
-
+        [Required]
         [StringLength(50)]
         public string FechaInicio { get; set; }
-
+        [Required]
         [StringLength(50)]
         public string FechaTermino { get; set; }
-
+        [Required]
         [StringLength(50)]
         public string Descripcion { get; set; }
-
+        [Required]
         [StringLength(50)]
         public string URL { get; set; }
 
         public int Id_miembro { get; set; }
-
+        [Required]
         [StringLength(50)]
         public string Avance { get; set; }
 
