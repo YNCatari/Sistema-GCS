@@ -121,12 +121,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Cronograma_ElementoController.cs" />
+    <Compile Include="Controllers\Elemento_ConfiguracionController.cs" />
+    <Compile Include="Controllers\FaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MetodologiaController.cs" />
     <Compile Include="Controllers\Miembro_ProyectoController.cs" />
+    <Compile Include="Controllers\ProyectoController.cs" />
     <Compile Include="Controllers\RolController.cs" />
+    <Compile Include="Controllers\Solicitud_CambiosController.cs" />
     <Compile Include="Controllers\Tipo_UsuarioController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Controllers\Version_ECSController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -159,6 +166,20 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Miembro_Proyecto\Index.cshtml" />
     <Content Include="Views\Miembro_Proyecto\Agregar.cshtml" />
+    <Content Include="Views\Solicitud_Cambios\Index.cshtml" />
+    <Content Include="Views\Solicitud_Cambios\Agregar.cshtml" />
+    <Content Include="Views\Metodologia\Index.cshtml" />
+    <Content Include="Views\Metodologia\Agregar.cshtml" />
+    <Content Include="Views\Fase\Index.cshtml" />
+    <Content Include="Views\Fase\AgregarEditar.cshtml" />
+    <Content Include="Views\Elemento_Configuracion\Index.cshtml" />
+    <Content Include="Views\Elemento_Configuracion\Agregar.cshtml" />
+    <Content Include="Views\Cronograma_Elemento\Index.cshtml" />
+    <Content Include="Views\Cronograma_Elemento\Agregar.cshtml" />
+    <Content Include="Views\Version_ECS\Index.cshtml" />
+    <Content Include="Views\Version_ECS\Agregar.cshtml" />
+    <Content Include="Views\Proyecto\Index.cshtml" />
+    <Content Include="Views\Proyecto\Agregar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

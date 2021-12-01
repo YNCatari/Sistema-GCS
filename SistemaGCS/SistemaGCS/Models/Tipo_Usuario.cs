@@ -4,9 +4,10 @@ namespace SistemaGCS.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
     using System.Data.Entity;
     using System.Linq;
+    using System.Data.Entity.Spatial;
+
     public partial class Tipo_Usuario
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -17,7 +18,7 @@ namespace SistemaGCS.Models
 
         [Key]
         public int Id_tipousuario { get; set; }
-        [Required]
+
         [StringLength(50)]
         public string Nombre { get; set; }
 
@@ -35,7 +36,7 @@ namespace SistemaGCS.Models
                     tipousuario = db.Tipo_Usuario.ToList();
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
                 throw;
             }
@@ -57,7 +58,7 @@ namespace SistemaGCS.Models
 
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
                 throw;
             }
@@ -79,7 +80,7 @@ namespace SistemaGCS.Models
                                 .SingleOrDefault();
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
                 throw;
             }
@@ -95,17 +96,17 @@ namespace SistemaGCS.Models
                 {
                     if (this.Id_tipousuario > 0)
                     {
-                        db.Entry(this).State = EntityState.Modified; 
+                        db.Entry(this).State = EntityState.Modified;
                     }
                     else
                     {
-                        db.Entry(this).State = EntityState.Added; 
+                        db.Entry(this).State = EntityState.Added;
                     }
                     db.SaveChanges();
 
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
                 throw;
             }
@@ -123,12 +124,13 @@ namespace SistemaGCS.Models
 
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
                 throw;
             }
         }
 
+
+
     }
 }
-

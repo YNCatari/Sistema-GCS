@@ -4,9 +4,10 @@ namespace SistemaGCS.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
     using System.Data.Entity;
     using System.Linq;
+    using System.Data.Entity.Spatial;
+
     [Table("Usuario")]
     public partial class Usuario
     {
@@ -18,19 +19,19 @@ namespace SistemaGCS.Models
 
         [Key]
         public int Id_usuario { get; set; }
-        [Required]
+
         [StringLength(50)]
         public string Nombre { get; set; }
-        [Required]
+
         [StringLength(50)]
         public string Apellido { get; set; }
-        [Required]
+
         [StringLength(50)]
         public string Correo { get; set; }
-        [Required]
+
         [StringLength(50)]
         public string Password { get; set; }
-        [Required]
+
         [StringLength(50)]
         public string Estado { get; set; }
 
@@ -42,7 +43,6 @@ namespace SistemaGCS.Models
         public virtual Tipo_Usuario Tipo_Usuario { get; set; }
 
         ModelGCS db = new ModelGCS();
-
         public List<Usuario> Listar()
         {
             var usuarios = new List<Usuario>();
@@ -53,7 +53,7 @@ namespace SistemaGCS.Models
                     usuarios = db.Usuario.Include("Tipo_Usuario").ToList();
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
                 throw;
             }
@@ -73,7 +73,7 @@ namespace SistemaGCS.Models
                                 .SingleOrDefault();
                 }
             }
-            catch (Exception )
+            catch (Exception)
             {
                 throw;
             }
@@ -174,5 +174,6 @@ namespace SistemaGCS.Models
             }
             return usuario;
         }
+
     }
 }

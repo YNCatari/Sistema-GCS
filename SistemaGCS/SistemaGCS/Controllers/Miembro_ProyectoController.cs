@@ -10,6 +10,7 @@ namespace SistemaGCS.Controllers
     {
         // GET: Miembro_Proyecto
         private Proyecto objProyecto = new Proyecto();
+
         private Rol objRol = new Rol();
         private Usuario objUsuario = new Usuario();
         private Miembro_Proyecto objMiembros = new Miembro_Proyecto();

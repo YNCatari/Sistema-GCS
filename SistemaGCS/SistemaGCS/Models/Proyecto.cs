@@ -4,9 +4,10 @@ namespace SistemaGCS.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
     using System.Data.Entity;
     using System.Linq;
+    using System.Data.Entity.Spatial;
+
     [Table("Proyecto")]
     public partial class Proyecto
     {
@@ -20,25 +21,23 @@ namespace SistemaGCS.Models
 
         [Key]
         public int Id_proyecto { get; set; }
-        [Required]
+
         [StringLength(50)]
         public string Codigo { get; set; }
-        [Required]
+
         [StringLength(50)]
         public string Nombre { get; set; }
-        [Required]
+
         [StringLength(50)]
         public string FechaInicio { get; set; }
-        [Required]
+
         [StringLength(50)]
         public string FechaTermino { get; set; }
-        [Required]
+
         [StringLength(50)]
         public string Estado { get; set; }
 
         public int Id_metodologia { get; set; }
-
-        public int Id_miembro { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cronograma_Elemento> Cronograma_Elemento { get; set; }
@@ -51,7 +50,7 @@ namespace SistemaGCS.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Solicitud_Cambios> Solicitud_Cambios { get; set; }
 
-        // listar solicitud
+        // listar proyecto
         public List<Proyecto> Listar()
         {
             var sc = new List<Proyecto>();
@@ -59,7 +58,7 @@ namespace SistemaGCS.Models
             {
                 using (var db = new ModelGCS())
                 {
-                    sc = db.Proyecto.Include("Metodologia").Include("Miembro_Proyecto").ToList();
+                    sc = db.Proyecto.Include("Metodologia").ToList();
                 }
             }
             catch (Exception)
@@ -70,6 +69,73 @@ namespace SistemaGCS.Models
             return sc;
 
         }
+        // obtener solicitud
+        public Proyecto Obtener(int id)
+        {
+            var sc = new Proyecto();
+            try
+            {
+                using (var db = new ModelGCS())
+                {
+                    sc = db.Proyecto.Include("Metodologia").Where(x => x.Id_proyecto == id)
+                                .SingleOrDefault();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
+            return sc;
+        }
+
+        // buscar solicitud
+        public List<Proyecto> Buscar(string criterio)
+        {
+            var sc = new List<Proyecto>();
+
+            try
+            {
+                using (var db = new ModelGCS())
+                {
+                    sc = db.Proyecto.Include("Metodologia").Where(x => x.Nombre.Contains(criterio) ||
+                                x.Codigo.Contains(criterio) ||
+                                x.FechaInicio.Contains(criterio) ||
+                                x.FechaTermino.Contains(criterio) ||
+                                x.Estado.Contains(criterio))
+                        .ToList();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            return sc;
+        }
+        //guardar solicitud
+        public void Guardar()
+        {
+            try
+            {
+                using (var db = new ModelGCS())
+                {
+                    if (this.Id_proyecto > 0)
+                    {
+                        db.Entry(this).State = EntityState.Modified; //existe
+                    }
+                    else
+                    {
+                        db.Entry(this).State = EntityState.Added; //nuevo registro
+                    }
+                    db.SaveChanges();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
     }
 }

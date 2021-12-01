@@ -40,6 +40,19 @@
                             <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
                         </a>
                     </li>
+
+                    <br />
+                    <li class="sidebar-item">
+                        <a data-bs-target="#datatables" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle" data-feather="user"></i> <span class="align-middle"> Solicitud de Cambios</span>
+                        </a>
+                        <ul id="datatables" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+
+                            <li class="sidebar-item"><a class="sidebar-link" href="~/Solicitud_Cambios/Agregar">Solicitar Cambios</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="~/Solicitud_Cambios/Index">Listar Cambios</a></li>
+                        </ul>
+                    </li>
+
                     <br />
                     <li class="sidebar-item">
                         <a data-bs-target="#pages" data-bs-toggle="collapse" class="sidebar-link collapsed">
@@ -54,79 +67,45 @@
 
                         </ul>
                     </li>
+
+
+
                     <br />
                     <li class="sidebar-item">
                         <a data-bs-target="#forms" data-bs-toggle="collapse" class="sidebar-link collapsed">
                             <i class="align-middle" data-feather="users"></i> <span class="align-middle">Proyectos</span>
                         </a>
                         <ul id="forms" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="#">Registrar Proyecto</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="#">Listar Proyecto</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="~/Rol/Agregar">Registrar Roles</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="~/Rol/Index">Listar Roles</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="~/Proyecto/Agregar">Registrar Proyecto</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="~/Proyecto/Index">Listar Proyecto</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="~/Metodologia/Agregar">Registrar Metodologia</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="~/Metodologia/Index">Listar Metodologia</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="~/Miembro_Proyecto/Agregar">Agregar Miembros</a></li>
                             <li class="sidebar-item"><a class="sidebar-link" href="~/Miembro_Proyecto/Index">Listar Miembros</a></li>
-
-
+                            <li class="sidebar-item"><a class="sidebar-link" href="~/Rol/Agregar">Registrar Roles</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="~/Rol/Index">Listar Roles</a></li>
                         </ul>
                     </li>
-                    <br />
-                    <li class="sidebar-item">
-                        <a href="#auth" data-bs-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="align-middle" data-feather="mail"></i> <span class="align-middle">Metodologias</span>
-                        </a>
-                        <ul id="auth" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="#">Registrar Metodologia</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="#">Listar Metodologia</a></li>
-                        </ul>
-                    </li>
-                    <br />
-                    <li class="sidebar-item">
-                        <a data-bs-target="#form-plugins" data-bs-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="align-middle" data-feather="feather"></i> <span class="align-middle">Elementos ECS</span>
-                        </a>
-                        <ul id="form-plugins" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="#">Registrar ECS</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="#">Listar ECS</a></li>
-
-
-                        </ul>
-                    </li>
-                    <br />
-                    <li class="sidebar-item">
-                        <a data-bs-target="#maps" data-bs-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="align-middle" data-feather="bar-chart"></i> <span class="align-middle">Fases</span>
-                        </a>
-                        <ul id="maps" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="#">Registrar Fase</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="#">Listar Fase</a></li>
-
-                        </ul>
-                    </li>
-                    <br />
-                    <li class="sidebar-item">
-                        <a data-bs-target="#datatables" data-bs-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="align-middle" data-feather="user"></i> <span class="align-middle"> Solicitud de Cambios</span>
-                        </a>
-                        <ul id="datatables" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
-
-                            <li class="sidebar-item"><a class="sidebar-link" href="#">Solicitar Cambios</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="#">Listar Cambios</a></li>
-                        </ul>
-                    </li>
-
-
 
                     <br />
                     <li class="sidebar-item">
-                        <a data-bs-target="#ui" data-bs-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="align-middle" data-feather="home"></i> <span class="align-middle"> Orden de Cambios</span>
+                        <a data-bs-target="#Fases" data-bs-toggle="collapse" class="sidebar-link collapsed">
+                            <i class="align-middle" data-feather="users"></i> <span class="align-middle">Fases</span>
                         </a>
-                        <ul id="ui" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="#">Registrar Orden Cambio</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="#">Listar Orden Cambios</a></li>
+                        <ul id="Fases" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+                            <li class="sidebar-item"><a class="sidebar-link" href="~/Fase/Agregar">Registrar Fases</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="~/Fase/Index">Listar Fases</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="~/Elemento_Configuracion/Agregar">Registrar Elemento C</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="~/Elemento_Configuracion/Index">Listar Elemento C</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="~/Cronograma_Elemento/Agregar">Agregar Cronograma_Elemento</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="~/Cronograma_Elemento/Index">Listar Cronograma_Elemento</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="~/Version_ECS/Agregar">Registrar Version ECS</a></li>
+                            <li class="sidebar-item"><a class="sidebar-link" href="~/Version_ECS/Index">Listar Version ECS</a></li>
                         </ul>
                     </li>
+
+
+
 
 
                 </ul>

@@ -4,9 +4,10 @@ namespace SistemaGCS.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
     using System.Data.Entity;
     using System.Linq;
+    using System.Data.Entity.Spatial;
+
     public partial class Miembro_Proyecto
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -37,7 +38,7 @@ namespace SistemaGCS.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Version_ECS> Version_ECS { get; set; }
 
-
+        //listar
         public List<Miembro_Proyecto> Listar()
         {
             var miembro = new List<Miembro_Proyecto>();
@@ -47,7 +48,7 @@ namespace SistemaGCS.Models
                 {
                     miembro = db.Miembro_Proyecto
                          .Include("Usuario")
-                        .Include("Rol")
+                         .Include("Rol")
                          .Include("Proyecto")
                         .ToList();
                 }
@@ -58,6 +59,7 @@ namespace SistemaGCS.Models
             }
             return miembro;
         }
+        //obtener
         public Miembro_Proyecto Obtener(int id)
         {
             var miembro = new Miembro_Proyecto();
@@ -76,7 +78,7 @@ namespace SistemaGCS.Models
             }
             return miembro;
         }
-
+        //buscar
         public List<Miembro_Proyecto> Buscar(string criterio)
         {
             var miembro = new List<Miembro_Proyecto>();
@@ -85,7 +87,7 @@ namespace SistemaGCS.Models
             {
                 using (var db = new ModelGCS())
                 {
-                   
+
 
                 }
             }
@@ -98,6 +100,7 @@ namespace SistemaGCS.Models
 
         }
 
+        //guardar
         public void Guardar()
         {
             try
@@ -121,5 +124,24 @@ namespace SistemaGCS.Models
             }
         }
 
+        //Metodo Eliminar
+        public void Eliminar()
+        {
+            try
+            {
+                using (var db = new ModelGCS())
+                {
+
+                    db.Entry(this).State = EntityState.Deleted;
+
+                    db.SaveChanges();
+
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

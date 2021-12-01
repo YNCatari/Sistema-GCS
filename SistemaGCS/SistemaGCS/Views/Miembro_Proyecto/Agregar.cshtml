@@ -1,9 +1,14 @@
 ﻿@model SistemaGCS.Models.Miembro_Proyecto
 @{
     ViewBag.Title = "Agregar";
-    List<SistemaGCS.Models.Proyecto> Tipopro = ViewBag.Tipopro;
-    List<SistemaGCS.Models.Rol> Tiporol = ViewBag.Tiporol;
-    List<SistemaGCS.Models.Usuario> Tipousua = ViewBag.Tipousua;
+    List<SistemaGCS.Models.Proyecto> TipoP = ViewBag.Tipopro;
+    List<SistemaGCS.Models.Rol> TipoR = ViewBag.Tiporol;
+    List<SistemaGCS.Models.Usuario> TipoU = ViewBag.Tipousua;
+
+    
+
+
+
 }
 
 <!-- Page header -->
@@ -26,10 +31,10 @@
 
             <div class="col-12 col-md-6">
                 <div class="form-group">
-                    <label for="Id_centro" class="bmd-label-floating">Usuario:</label>
-                    <select name="Id_centro" class="form-control">
+                    <label for="Id_usuario" class="bmd-label-floating">Usuario:</label>
+                    <select name="Id_usuario" class="form-control">
                         <option @(Model.Id_usuario.Equals("") ? "selected" : "") value="">--Seleccione--</option>
-                        @foreach (var t in Tipousua)
+                        @foreach (var t in TipoU)
                         {
                             <option @(Model.Id_usuario.Equals(t.Id_usuario) ? "selected" : "")
                                     value="@t.Id_usuario">
@@ -45,7 +50,7 @@
                     <label for="Id_rol" class="bmd-label-floating">Rol:</label>
                     <select name="Id_rol" class="form-control">
                         <option @(Model.Id_rol.Equals("") ? "selected" : "") value="">--Seleccione--</option>
-                        @foreach (var t in Tiporol)
+                        @foreach (var t in TipoR)
                         {
                             <option @(Model.Id_rol.Equals(t.Id_rol) ? "selected" : "")
                                     value="@t.Id_rol">
@@ -61,7 +66,7 @@
                     <label for="Id_proyecto" class="bmd-label-floating">PROYECTO:</label>
                     <select name="Id_proyecto" class="form-control">
                         <option @(Model.Id_proyecto.Equals("") ? "selected" : "") value="">--Seleccione--</option>
-                        @foreach (var t in Tipopro)
+                        @foreach (var t in TipoP)
                         {
                             <option @(Model.Id_proyecto.Equals(t.Id_proyecto) ? "selected" : "")
                                     value="@t.Id_proyecto">

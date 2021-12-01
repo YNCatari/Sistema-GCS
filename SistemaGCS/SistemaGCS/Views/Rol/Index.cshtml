@@ -3,7 +3,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Tipo Usuario</h2>
+<h2>Roles</h2>
 <h2 class="pagegeader">
     <a href="~/Rol/Agregar" class="btn btn-info text-right">Nuevo Registro</a>
 
@@ -34,7 +34,7 @@
             <td>
 
                 <a href="~/Rol/Agregar/@m.Id_rol" class="btn btn-success">Editar</a>
-                <a onclick="return confirm('Esta Seguro que desea eliminar el registro?')" href="~/Rol/Eliminar/@m.Id_rol" class="btn btn-danger">Eliminar</a>
+                @*<a onclick="return confirm('Esta Seguro que desea eliminar el registro?')" href="~/Rol/Eliminar/@m.Id_rol" class="btn btn-danger">Eliminar</a>*@
             </td>
         </tr>
         }

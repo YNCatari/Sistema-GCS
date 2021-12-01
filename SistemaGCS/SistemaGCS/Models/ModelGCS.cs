@@ -8,7 +8,7 @@ namespace SistemaGCS.Models
     public partial class ModelGCS : DbContext
     {
         public ModelGCS()
-            : base("name=ModelGCS")
+            : base("name=ModelGCS1")
         {
         }
 

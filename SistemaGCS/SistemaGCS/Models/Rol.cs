@@ -4,9 +4,10 @@ namespace SistemaGCS.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
     using System.Data.Entity;
     using System.Linq;
+    using System.Data.Entity.Spatial;
+
     [Table("Rol")]
     public partial class Rol
     {
@@ -18,10 +19,10 @@ namespace SistemaGCS.Models
 
         [Key]
         public int Id_rol { get; set; }
-        [Required]
+
         [StringLength(50)]
         public string Nombre { get; set; }
-        [Required]
+
         [StringLength(50)]
         public string Estado { get; set; }
 
@@ -47,7 +48,7 @@ namespace SistemaGCS.Models
             return rol;
 
         }
-
+        ///METODO BUSCAR
         public List<Rol> Buscar(string criterio)
         {
             var rol = new List<Rol>();
@@ -71,7 +72,7 @@ namespace SistemaGCS.Models
 
         }
 
-
+        ///METODO OBTENER
         public Rol Obtener(int id)
         {
             var rol = new Rol();
@@ -90,7 +91,7 @@ namespace SistemaGCS.Models
 
             return rol;
         }
-
+        ///METODO Guardar
         public void Guardar()
         {
             try
@@ -114,6 +115,7 @@ namespace SistemaGCS.Models
                 throw;
             }
         }
+        ///METODO Eliminar
         public void Eliminar()
         {
             try
@@ -132,6 +134,7 @@ namespace SistemaGCS.Models
                 throw;
             }
         }
+
 
     }
 }

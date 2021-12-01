@@ -50,7 +50,7 @@
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(x => x.Id_tipousuario)
+                @Html.LabelFor(x => x.Tipo_Usuario)
                 <select name="Id_tipousuario" class="form-control">
                     <option @(Model.Id_tipousuario.Equals("") ? "selected" : "") value="">--Seleccione--</option>
                     @foreach (var t in tipousuario)

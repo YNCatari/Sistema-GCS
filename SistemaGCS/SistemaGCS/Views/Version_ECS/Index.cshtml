@@ -1,0 +1,57 @@
+﻿@model List<SistemaGCS.Models.Version_ECS>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Version</h2>
+<h2 class="pagegeader">
+    <a href="~/Version_ECS/Agregar" class="btn btn-info text-right">Nuevo Registro</a>
+
+</h2>
+<br />
+<br />
+@using (Html.BeginForm("Index", "Version_ECS", FormMethod.Post))
+{
+
+}
+
+<table id="datatable" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Elemento C</th>
+            <th>Version </th>
+            <th>Inicio</th>
+            <th>Termino</th>
+            <th>Descripcion</th>
+            <th>Url</th>
+            <th>Miembro</th>
+            <th>%</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <td>@(m.Id_version)</td>
+                <td>@(m.Elemento_Configuracion.Nombre)</td>
+                <td>@(m.Version)</td>
+                <td>@(m.FechaInicio)</td>
+                <td>@(m.FechaTermino)</td>
+                <td>@(m.Descripcion)</td>
+                <td>@(m.URL)</td>
+                <td>@(m.Miembro_Proyecto.Id_miembro)</td>
+                <td>@(m.Avance)</td>
+                
+                <td>
+
+                    <a href="~/Version_ECS/Agregar/@m.Id_version" class="btn btn-success">Editar</a>
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+    <p></p>
+</table>
+
