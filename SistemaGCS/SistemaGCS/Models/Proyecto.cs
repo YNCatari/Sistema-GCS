@@ -5,7 +5,8 @@ namespace SistemaGCS.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-
+    using System.Data.Entity;
+    using System.Linq;
     [Table("Proyecto")]
     public partial class Proyecto
     {
@@ -49,5 +50,26 @@ namespace SistemaGCS.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Solicitud_Cambios> Solicitud_Cambios { get; set; }
+
+        // listar solicitud
+        public List<Proyecto> Listar()
+        {
+            var sc = new List<Proyecto>();
+            try
+            {
+                using (var db = new ModelGCS())
+                {
+                    sc = db.Proyecto.Include("Metodologia").Include("Miembro_Proyecto").ToList();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return sc;
+
+        }
+
     }
 }
