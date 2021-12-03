@@ -20,7 +20,7 @@ namespace SistemaGCS.Models
 
         [Key]
         public int Id_metodologia { get; set; }
-
+        [Required]
         [StringLength(50)]
         public string Nombre { get; set; }
 

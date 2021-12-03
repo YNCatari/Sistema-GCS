@@ -18,10 +18,10 @@ namespace SistemaGCS.Models
 
         [Key]
         public int Id_cronogramaelemento { get; set; }
-
+        [Required]
         [StringLength(50)]
         public string FechaInicio { get; set; }
-
+        [Required]
         [StringLength(50)]
         public string Fechafin { get; set; }
 

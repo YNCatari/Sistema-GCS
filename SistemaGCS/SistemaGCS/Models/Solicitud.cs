@@ -19,10 +19,10 @@ namespace SistemaGCS.Models
 
         [Key]
         public int Id_solicitud { get; set; }
-
+        [Required]
         [StringLength(50)]
         public string Requerimiento { get; set; }
-
+        [Required]
         [StringLength(50)]
         public string Descripcion { get; set; }
 

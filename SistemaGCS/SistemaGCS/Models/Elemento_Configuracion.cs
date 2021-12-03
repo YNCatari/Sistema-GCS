@@ -18,18 +18,18 @@ namespace SistemaGCS.Models
 
         [Key]
         public int Id_elementoconfiguracion { get; set; }
-
+        [Required]
         [StringLength(50)]
         public string Codigo { get; set; }
-
+        [Required]
         [StringLength(50)]
         public string Nombre { get; set; }
-
+        [Required]
         [StringLength(50)]
         public string Nomenclatura { get; set; }
 
         public int Id_fase { get; set; }
-
+        [Required]
         [StringLength(50)]
         public string Url { get; set; }
 
