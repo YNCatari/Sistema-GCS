@@ -1,0 +1,44 @@
+﻿@model List<SistemaGCS.Models.Miembro_Elemento>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Miembro Proyecto</h2>
+<h2 class="pagegeader">
+    <a href="~/Miembro_Elemento/Agregar" class="btn btn-info text-right">Nuevo Registro</a>
+
+</h2>
+<br />
+<br />
+@using (Html.BeginForm("Index", "Miembro_Elemento", FormMethod.Post))
+{
+
+}
+
+<table id="datatable" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Miembro </th>
+            <th>Elemento </th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <td>@(m.Id_miembroelemento)</td>
+                <td>@(m.Miembro_Proyecto.Id_usuario) - @(m.Miembro_Proyecto.Id_proyecto)</td>
+                <td>@(m.Elemento_Configuracion.Nomenclatura) - @(m.Elemento_Configuracion.Id_fase)</td>
+                <td>
+
+                    <a href="~/Miembro_Elemento/Agregar/@m.Id_miembroelemento" class="btn btn-success">Editar</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+    <p></p>
+</table>
+
